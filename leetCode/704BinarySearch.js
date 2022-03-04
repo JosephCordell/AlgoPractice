@@ -1,19 +1,21 @@
 
-const search = (arr, target) => {
-    let left = 0
-    let right = arr.length -1 
-    let pivot
-    while (left <= right ) {
-        pivot = left + Math.floor(( right - left) /2)
-        if (arr[pivot] == target ) return pivot
-        if ( target < arr[pivot]) right = pivot -1 
-        else left = pivot +1
-    }
-    return -1
 
+const search = (nums, target, left = 0, right = nums.length-1) => {
+    let middle = Math.floor((left + right) /2)
+    console.log(nums, target, left, right, middle);
+    if (nums[middle] > target) {
+        if (middle === right) return -1
+        right = middle -1
+        return search(nums, target, left, right)
+    } else if (nums[middle] < target) {
+        if (middle === right) return -1
+        left = middle +1
+        return search(nums, target, left, right)
+    } 
+    return middle
 }
 
-const arr =  [-1,0, 2,3,5,9,12]
-const target = 9
+const nums = [-2, -1, 3, 5, 9, 10, 12]
+const target = 25
 
-console.log(search(arr, target));
+console.log(search(nums, target));

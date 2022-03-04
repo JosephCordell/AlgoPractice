@@ -1,3 +1,3 @@
-# CodeWars
+# Algorithm Practice
 
-Keeping track of my struggles while learning algorithms with Code Wars and HackerRank
+Keeping track of my struggles while learning algorithms with various websites
