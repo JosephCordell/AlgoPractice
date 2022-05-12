@@ -21,20 +21,30 @@ Constraints:
 Follow up: Could you minimize the total number of operations done? */
 
 var moveZeroes = function (nums) {
-    let index = 0
-
-    for (let i = 0; i < nums.length; i++) {
-        const num = nums[i]
-
-        if (num !== 0) {
-            nums[index] = num
-            index++
+    let pointer1 = 0
+    let pointer2 = 1
+    const limit = nums.length
+    while ( pointer2 < limit ) {
+        if ((nums[pointer1] === 0 && nums[pointer2] !== 0)) {
+            nums[pointer1] = nums[pointer2]
+            nums[pointer2] = 0
+            pointer1++
+            pointer2++
+        } else if (nums[pointer1] !== 0 && nums[pointer2] !== 0) {
+            pointer1++
+            pointer2++
+        } else if (nums[pointer1] !== 0 && nums[pointer2] === 0) {
+            pointer1++
+            pointer2++
+        }
+        else {
+            pointer2++
         }
     }
-    for (let i = index; i < nums.length; i++) {
-        nums[i] = 0;
-    }
+    return nums
 };
+
+
 
 const nums = [0, 0, 1]
 

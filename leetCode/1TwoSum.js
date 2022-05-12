@@ -49,8 +49,6 @@ var twoSum = function(nums, target) {
     let sorted = []
     for (let i = 0; i < nums.length; i++) {
         sorted[i] = {value: nums[i], index: i}
-
-        
     }
     sorted.sort(function(a, b){return a.value - b.value})
     let pointer1 = 0

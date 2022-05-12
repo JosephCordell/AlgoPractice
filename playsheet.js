@@ -1,18 +1,30 @@
-var search = function (nums, target) {
-    if (nums[0] > target ) return 0
-    if (nums[nums.length-1] < target ) return nums.length 
-    let left = 0
-    let right = nums.length -1 
-    while (left <= right ){
-        console.log(left, right);
-        let mid = Math.floor(left + (right - left)/2)
-        if (nums[mid] === target ) return mid
-        if (nums[mid] < target ) left = mid + 1
-        if (nums[mid] > target ) right = mid -1
+var search = function (nums) {
+    pointer1 = 0
+    pointer2 = 1
+    let test = 0
+    const limit = nums.length
+    while ( pointer2 < limit ) {
+        console.log(pointer1, pointer2, nums);
+        if ((nums[pointer1] === 0 && nums[pointer2] !== 0)) {
+            nums[pointer1] = nums[pointer2]
+            nums[pointer2] = 0
+            pointer1++
+            pointer2++
+        } else if (nums[pointer1] !== 0 && nums[pointer2] !== 0) {
+            pointer1++
+            pointer2++
+        } else if (nums[pointer1] !== 0 && nums[pointer2] === 0) {
+            pointer1++
+            pointer2++
+        }
+        else {
+
+            pointer2++
+        }
     }
-    return left
+    return nums
 };
 
-let nums = [1,3,5,6], target = 5
+let nums = [45192, 0, -659, -52359, -99225, -75991, 0, -15155, 27382, 59818, 0, -30645, -17025, 81209, 887, 64648]
 
-console.log(search(nums,target));
+console.log(search(nums));
