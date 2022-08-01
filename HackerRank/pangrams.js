@@ -60,3 +60,10 @@ function pangrams(s) {
 let str = 'We promptly judged antique ivory buckles for the next prize'
 
 console.log(pangrams(str));
+
+
+
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+}
