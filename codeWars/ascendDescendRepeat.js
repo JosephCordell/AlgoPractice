@@ -21,29 +21,24 @@ return an empty string if maximum < minimum or length == 0
 minimum and maximum can equal one another and result in a single number repeated for the length of the string */
 
 const ascendDescend = (length, min, max) => {
+    if( min > max || length === 0)return ''
     let response = []
     let digit = min
     let up = true
-    while (response.length < length) {
-        if (up) {
-            response.push(digit)
-            if (digit !== max) {
-                digit++
-            }
-            else if (digit === max) {
-                up = false
-            }
-        } else {
-            response.push(digit)
-            if (digit !== min) {
-                digit--
-            }
-            else if (digit === min) {
-                up = true
-            }
+    while (response.join('').length < length) {
+        console.log(response.join().length);
+        console.log(response.join(''));
+        response.push(digit)
+        if (digit !== min || digit !== max) {
+            up ? digit++ : digit--
+        }
+        if (digit === min || digit === max) {
+            up = !up
         }
     }
-    console.log(response);
+    return response.join('').slice(0,length)
 }
+console.log(
 
-ascendDescend(14, 0, 2)
+    ascendDescend(1, -25, -35)
+);
