@@ -23,7 +23,7 @@ In some languages, it is possible to mutate the input to the function. This is s
 
 const score = (dice) => {
     let score = 0
-    let dict = {/*  1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 */ }
+    let dict = { }
     for (let i = 0; i < dice.length; i++) {
         if (dict[dice[i]]) dict[dice[i]]++
         else dict[dice[i]] = 1
