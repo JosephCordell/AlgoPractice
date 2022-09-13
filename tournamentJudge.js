@@ -11,3 +11,5 @@ let averageScores = (scores) => {
 }
 
 console.log(averageScores(scores));
+
+SHA256:GY2GfbMG/LSdsk0zIwwYwj9DW8YHw8xyOyVqwPfnwmk
