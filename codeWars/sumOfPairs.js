@@ -28,13 +28,20 @@ Negative numbers and duplicate numbers can and will appear.
 NOTE: There will also be lists tested of lengths upwards of 10,000,000 elements. Be sure your code doesn't time out. */
 
 function sumPairs(ints, s) {
+    let indices = []
     for (let i = 0; i < ints.length; i++) {
         for (let j = i+1; j < ints.length; j++) {
-            console.log(i, j, s);
-            if (i + j === s) return [i, j]
-            
-        }        
+            if (ints[i] + ints[j] === s) indices.push([i, j])
+        }      
     }
+    let min = indices.length-1
+    for (let i = 0; i < indices.length; i++) {
+        if (indices[i][1] < indices[min][1]){
+            min = i
+        }
+    }
+    console.log(indices);
+    return indices.length >0 ?  [ints[indices[min][0]], ints[indices[min][1]]] : undefined
 }
 
   let ints = [1, 4, 8, 7, 3, 15]
