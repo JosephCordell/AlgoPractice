@@ -8,3 +8,11 @@ Range: (1 ≤ n ≤ 15) and (0 ≤ k ≤ n2)
 
  */
 
+function rooks(n, k) {
+    let res = 1n;
+    for (let i = 1n, j = n; i <= k; i++, j--)
+      res = res * j * j / i;
+    return res;
+  }
+  
+  console.log(rooks(4n, 2n));
