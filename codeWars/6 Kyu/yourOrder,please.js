@@ -13,7 +13,6 @@ function order(words){
     let arr = words.split(' ')
     arr.sort((a, b) => a.match(/\d/) - b.match(/\d/))
     return arr
-
   }
 
 let words = "is2 Thi1s T4est 3a"
