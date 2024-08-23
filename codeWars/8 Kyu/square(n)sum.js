@@ -7,7 +7,6 @@ function squareSum(numbers){
     return total
 }
 
-
 let n = [1,2,2]
 console.log("test")
 console.log(squareSum(n))
