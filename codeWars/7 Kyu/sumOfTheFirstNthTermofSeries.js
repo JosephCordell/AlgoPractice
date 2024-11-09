@@ -28,6 +28,7 @@ series =(n)=> {
 return answer.toFixed(2)
 }
 
+
 console.log(series(4))
 
 
